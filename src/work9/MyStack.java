@@ -66,23 +66,23 @@ public class MyStack<E> {
         return size;
     }
 
-    public Node<E> peek() {
+    public E peek() {
         if (first == null) return null;
-        if (last == null) return first;
-        return last;
+        if (last == null) return first.getCurrentElement();
+        return last.getCurrentElement();
     }
 
-    public Node<E> pop() {
+    public E pop() {
         if (first == null) return null;
         if (last == null) {
             current = first;
             first = null;
-            return current;
+            return current.getCurrentElement();
         }
         current = last;
         last = last.getPreviousElement();
         last.setNextElement(null);
-        return current;
+        return current.getCurrentElement();
     }
 
     @Override
@@ -108,6 +108,7 @@ public class MyStack<E> {
         myStack.push("c");
         myStack.push("d");
         myStack.push("e");
+        myStack.push(4);
         System.out.println(myStack);
         System.out.println(myStack.peek());
         System.out.println(myStack.size());

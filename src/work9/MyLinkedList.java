@@ -84,7 +84,7 @@ public class MyLinkedList<E> {
         return size;
     }
 
-    public Node<E> get(int index) {
+    public E get(int index) {
         if (index < 0 || index > size() - 1) {
             return null;
         }
@@ -93,7 +93,7 @@ public class MyLinkedList<E> {
               current = current.getNextElement();
         }
 
-        return current;
+        return current.getCurrentElement();
     }
 
     @Override

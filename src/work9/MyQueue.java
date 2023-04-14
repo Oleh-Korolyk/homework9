@@ -39,16 +39,20 @@ public class MyQueue<E> {
         return size;
     }
 
-    public Node<E> peek() {
-        return first;
+    public E peek() {
+        if (first == null) {
+            return null;
+        } else {
+            return first.getCurrentElement();
+        }
     }
 
-    public Node<E> poll() {
+    public E poll() {
         if (first == null) return null;
         current = first;
         first = first.getNextElement();
         first.setPreviousElement(null);
-        return current;
+        return current.getCurrentElement();
     }
 
     public String toString() {
@@ -72,6 +76,7 @@ public class MyQueue<E> {
         myQueue.add("c");
         myQueue.add("d");
         myQueue.add("e");
+        myQueue.add(4);
 
         System.out.println(myQueue);
         System.out.println(myQueue.size());

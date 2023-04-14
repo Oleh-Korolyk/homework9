@@ -55,6 +55,7 @@ public class MyHashMap<String, E> {
 
     }
 
+
     public void clear() {
         for (int i = 0; i < n; i++) {
            chain[i] = null;
@@ -99,6 +100,10 @@ public class MyHashMap<String, E> {
 
         MyHashMap myHashMap = new MyHashMap();
 
+        myHashMap.put(10, 101010101);
+        myHashMap.put('#', "дієз");
+        myHashMap.put(new Apple(), "Смачні яблука!");
+
 
         myHashMap.put("pineapple", new Pineapple());
         myHashMap.put("pineapple","#####");
@@ -117,6 +122,7 @@ public class MyHashMap<String, E> {
         myHashMap.put("d", "DDD");
         myHashMap.put("e", "EEE");
         myHashMap.put("f", "FFF");
+
 
 
         System.out.println(myHashMap);
@@ -154,3 +160,4 @@ public class MyHashMap<String, E> {
 
 
 }
+
